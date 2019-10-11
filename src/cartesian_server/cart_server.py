@@ -36,7 +36,7 @@ class CartesianServer(object):
 
     def service_callback(self, req):
         self.arm = req.arm.data
-        self.vel_pub = rospy.Publisher('/movo/%s_arm/cartesian_vel_cmd'%self.arm, JacoCartesianVelocityCmd, queue_size=10)
+        self.vel_pub = rospy.Publisher('/movo/%s/cartesian_vel_cmd'%self.arm, JacoCartesianVelocityCmd, queue_size=10)
         self.received = False
         dx = req.dx
         dy = req.dy

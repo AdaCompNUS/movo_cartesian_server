@@ -31,16 +31,17 @@ def main_test():
     rospy.init_node('cart_test')
     _cartesian_client = rospy.ServiceProxy(CARTESIAN_SERVER, CartesianGoal)
     rospy.wait_for_service(CARTESIAN_SERVER)
+    arm_name = 'right_arm'
 
     raw_input('right arm move in x by 5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dx=0.05, arm='right')
+    _, init, final = move_in_cartesian(_cartesian_client, dx=0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('right arm move in x by -5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dx=-0.05, arm='right')
+    _, init, final = move_in_cartesian(_cartesian_client, dx=-0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
@@ -48,70 +49,71 @@ def main_test():
 
 
     raw_input('right arm move in y by -5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dy=-0.05, arm='right')
+    _, init, final = move_in_cartesian(_cartesian_client, dy=-0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('right arm move in y by 5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dy=0.05, arm='right')
+    _, init, final = move_in_cartesian(_cartesian_client, dy=0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('right arm move in z by 5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dz=0.05, arm='right')
+    _, init, final = move_in_cartesian(_cartesian_client, dz=0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('right arm move in z by -5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dz=-0.05, arm='right')
+    _, init, final = move_in_cartesian(_cartesian_client, dz=-0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
+    arm_name = 'left_arm'
     raw_input('left arm move in x by 5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dx=0.05, arm='left')
+    _, init, final = move_in_cartesian(_cartesian_client, dx=0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('left arm move in x by -5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dx=-0.05, arm='left')
+    _, init, final = move_in_cartesian(_cartesian_client, dx=-0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('left arm move in y by 5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dy=0.05, arm='left')
+    _, init, final = move_in_cartesian(_cartesian_client, dy=0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('left arm move in y by -5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dy=-0.05, arm='left')
+    _, init, final = move_in_cartesian(_cartesian_client, dy=-0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('left arm move in z by 5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dz=0.05, arm='left')
+    _, init, final = move_in_cartesian(_cartesian_client, dz=0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z
     print '================='
 
     raw_input('left arm move in z by -5cm')
-    _, init, final = move_in_cartesian(_cartesian_client, dz=-0.05, arm='left')
+    _, init, final = move_in_cartesian(_cartesian_client, dz=-0.05, arm=arm_name)
     print 'X: ', init.pose.position.x - final.pose.position.x
     print 'Y: ', init.pose.position.y - final.pose.position.y
     print 'Z: ', init.pose.position.z - final.pose.position.z

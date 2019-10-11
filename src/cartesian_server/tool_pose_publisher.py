@@ -15,7 +15,7 @@ class ToolPose(object):
 
     def tool_pose_callback(self, req):
         ''' get gripper link pose with respect to base_link'''
-        arm = req.arm.data
+        arm = req.arm.data[:-4]
         res = GetToolPoseResponse()
         time = 0
         trans = None
